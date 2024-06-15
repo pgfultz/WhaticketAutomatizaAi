@@ -17,6 +17,13 @@
 
 ## Principais Funcionalidades
 
+- 🔗 <strong>Integração Pixel Facebook:<strong> Acompanhe e registre conversões com o pixel do Facebook. <br><br>
+- 🔗 <strong>Integração Webhook:<strong> Utilize webhooks para conectar com outros sistemas e automatizar processos. <br><br>
+- 🔗 <strong>Integração Dialogflow:<strong> Integre com Dialogflow para adicionar funcionalidades avançadas de IA às conversas. <br><br>
+- 🔗 <strong>Integração Typebot:<strong> Integre com Typebot para criação de chatbots personalizados.<br><br>
+- 🔗 <strong>Integração n8n:<strong> Integre com n8n para automação de workflows.<br><br>
+- 🔗 <strong>Integração Asaas:<strong> Integre com Asaas para gestão de cobranças e pagamentos.<br><br>
+- 🔗 <strong>Integração PagHiper:<strong> Integre com PagHiper para buscar boletos.<br><br>
 - 🔊 <strong>Transcrever Áudios:<strong> Converta áudios recebidos em texto.<br><br>
 - 🌟 <strong>Atendimento Organizado:<strong> Adicione vários atendentes e defina por setores para uma gestão organizada.<br><br>
 - 📲 <strong>Adicionar Participantes:<strong> Integre novos participantes facilmente em conversas existentes.<br><br>
@@ -47,6 +54,8 @@
 
 
 <h1>Demonstração</h1>
+
+![link About do site](https://github.com/andrew890074/Whaticket-Saas-Completo/blob/main/demonstração/flow.jpeg)
 
 ![GIF](demonstração/transcrição.gif)
 
