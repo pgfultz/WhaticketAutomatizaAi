@@ -55,7 +55,7 @@
 
 <h1>Demonstração</h1>
 
-![link About do site](https://github.com/andrew890074/Whaticket-Saas-Completo/blob/main/demonstração/flow.jpeg)
+![link About do site](https://github.com/andrew890074/WhaticketWorkflow/blob/main/demonstração/flow.jpeg)
 
 ![GIF](demonstração/transcrição.gif)
 
