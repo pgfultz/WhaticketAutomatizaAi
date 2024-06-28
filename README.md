@@ -11,12 +11,13 @@
 
 <h3>Whatsapp Suporte: +55 (51) 99705-8551<h3>
 
-<h3>Seja um revendedor desse sistema chame no Whatsapp: +55 (21) 95915-5530<h3>
-
 <br/>
 
 ## Principais Funcionalidades
 
+- 🤖 <strong>Palavra-Chave:<strong> Ative e alterne entre fluxos automaticamente utilizando palavras-chave.<br><br>
+- 🤖 <strong>Chatbot Inteligente:<strong> Configure seu chatbot por setor para respostas automatizadas.<br><br>
+- 🔗 <strong>Integração Com Sites:<strong> Monitore em tempo real e receba notificações instantâneas sobre os acessos ao seu site! <br><br>
 - 🔗 <strong>Integração Pixel Facebook:<strong> Acompanhe e registre conversões com o pixel do Facebook. <br><br>
 - 🔗 <strong>Integração Webhook:<strong> Utilize webhooks para conectar com outros sistemas e automatizar processos. <br><br>
 - 🔗 <strong>Integração Dialogflow:<strong> Integre com Dialogflow para adicionar funcionalidades avançadas de IA às conversas. <br><br>
@@ -29,7 +30,6 @@
 - 📲 <strong>Adicionar Participantes:<strong> Integre novos participantes facilmente em conversas existentes.<br><br>
 - 📢 <strong>Campanhas Personalizadas:<strong> Crie campanhas com agendamento e utilize variáveis para comunicações personalizadas.<br><br>
 - 🗓️ <strong>Agendamento Recorrente:<strong> Automatize o envio de mensagens agendadas por contatos.<br><br>
-- 🤖 <strong>Chatbot Inteligente:<strong> Configure seu chatbot por setor para respostas automatizadas.<br><br>
 - 📁 <strong>Envio de Arquivos:<strong> Compartilhe imagens, vídeos, documentos e áudios de forma prática.<br><br>
 - 📈 <strong>Gerenciamento de Leads:<strong> Capture leads automaticamente ao receberem contato.<br><br>
 - ✉️ <strong>Mensagens Rápidas:<strong> Crie mensagens pré-configuradas para respostas ágeis.<br><br>
@@ -54,7 +54,7 @@
 
 
 <h1>Demonstração</h1>
-
+![link About do site](https://github.com/andrew890074/WhaticketWorkflow/blob/main/demonstração/flow2.jpeg)
 ![link About do site](https://github.com/andrew890074/WhaticketWorkflow/blob/main/demonstração/flow.jpeg)
 
 ![GIF](demonstração/transcrição.gif)
