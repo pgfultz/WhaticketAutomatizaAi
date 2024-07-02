@@ -9,8 +9,9 @@
 <code>apt update && apt upgrade -y && apt install sudo git -y && sudo rm -rf WhaticketWorkflow && sudo git clone https://github.com/andrew890074/WhaticketWorkflow.git && cd WhaticketWorkflow && sudo chmod +x ./automatizaai && ./automatizaai</code><br />
 &nbsp;</p>
 
-<h3>Whatsapp Suporte: +55 (51) 99705-8551<h3>
+<h3>Whatsapp Suporte: +55 (51) 9957-9150<h3>
 
+<h3>Grupo de Suporte: https://encurtador.com.br/Q9Yl5<h3>
 <br/>
 
 ## Principais Funcionalidades
