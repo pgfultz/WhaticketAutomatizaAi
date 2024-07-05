@@ -165,6 +165,9 @@ move_whaticket_files() {
   sudo mv /root/whaticket/backend/automatizaai /home/deployautomatizaai/whaticket/backend
   sudo mv /root/whaticket/backend/package.json /home/deployautomatizaai/whaticket/backend
   sudo rm -rf /root/whaticket
+  npm cache clean --force
+  npm cache clean --force
+  npm cache clean --force
   sudo apt update
   sudo apt install ffmpeg
 
