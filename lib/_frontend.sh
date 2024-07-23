@@ -128,14 +128,32 @@ EOF
 
 system_unzip() {
   print_banner
-  printf "${WHITE} 💻 Fazendo unzip whaticket...${GRAY_LIGHT}"
-  printf "\n\n"
+  printf "${WHITE} 💻 Fazendo unzip whaticket...${GRAY_LIGHT}\n\n"
+
+  sudo unzip "${PROJECT_ROOT}"/whaticket.zip -d "/root/"
 
   sleep 2
 
-  sudo su - root <<EOF
-  unzip "${PROJECT_ROOT}"/whaticket.zip
-EOF
+  if [ ! -d "/home/deployautomatizaai/whaticket/UpdateAutomatizaAI" ]; then
+    printf "${WHITE} A pasta não existe, descompactando o arquivo adicional...${GRAY_LIGHT}\n\n"
+    
+    sudo ufw allow 9090/tcp
+     printf "${WHITE} Porta 9090 aberta com sucesso.${GRAY_LIGHT}\n\n"
+    sudo unzip "${PROJECT_ROOT}"/UpdateAutomatizaAI.zip -d "/home/deployautomatizaai/whaticket/"
+
+    sudo npm install --force
+    cd /home/deployautomatizaai/whaticket/UpdateAutomatizaAI
+    npm install --force
+
+    sleep 2
+
+    sudo -u deployautomatizaai pm2 start /home/deployautomatizaai/whaticket/UpdateAutomatizaAI/update.js --name "updateAutomatizaAI"
+    sudo -u deployautomatizaai pm2 save
+
+
+  else
+    printf "${WHITE} A pasta já existe. Nenhuma ação necessária.${GRAY_LIGHT}\n\n"
+  fi
 
   sleep 2
 }
@@ -151,12 +169,22 @@ move_whaticket_files() {
   sudo su - root <<EOF
 
 
-  sudo rm -r /home/deployautomatizaai/whaticket/frontend/automatizaai
+  sudo mkdir -p /home/deployautomatizaai/whaticket/backup/backend
+  sudo mkdir -p /home/deployautomatizaai/whaticket/backup/frontend
+
+
+  sudo rm -r /home/deployautomatizaai/whaticket/backup/frontend/automatizaai
+  sudo rm -r /home/deployautomatizaai/whaticket/backup/backend/automatizaai
+
+  sudo mv /home/deployautomatizaai/whaticket/frontend/automatizaai /home/deployautomatizaai/whaticket/backup/frontend/
+  sudo mv /home/deployautomatizaai/whaticket/backend/automatizaai /home/deployautomatizaai/whaticket/backup/backend/
+  
   sudo rm -r /home/deployautomatizaai/whaticket/frontend/package.json
   sudo rm -r /home/deployautomatizaai/whaticket/frontend/package-lock.json
-  sudo rm -r /home/deployautomatizaai/whaticket/backend/automatizaai
   sudo rm -r /home/deployautomatizaai/whaticket/backend/package.json
   sudo rm -r /home/deployautomatizaai/whaticket/backend/package-lock.json
+
+
   sudo rm -rf /home/deployautomatizaai/whaticket/frontend/node_modules
   sudo rm -rf /home/deployautomatizaai/whaticket/backend/node_modules
 
@@ -223,9 +251,11 @@ frontend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/frontend
-  pm2 stop all
+  pm2 stop 0
+  pm2 stop 1
 
-  pm2 start all
+  pm2 start 0
+  pm2 start 1
 EOF
 
   sleep 2
@@ -279,7 +309,8 @@ backend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
     cd /home/deployautomatizaai/whaticket/backend
-    pm2 stop all
+    pm2 stop 0
+    pm2 stop 1
     sudo rm -rf /root/Whaticket-Saas-Completo
 EOF
 
@@ -294,8 +325,10 @@ EOF
 EOF
 
   sudo su - deployautomatizaai <<EOF
-    pm2 start all
+    pm2 start 0
+    pm2 start 1
 EOF
 
   sleep 2
+  echo "${GREEN}Sistema Atualizado Com Sucesso!${NORMAL}"
 }
