@@ -309,6 +309,8 @@ backend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
     cd /home/deployautomatizaai/whaticket/backend
+    pm2 stop ecosystem.config.js
+
     pm2 stop 0
     pm2 stop 1
     sudo rm -rf /root/Whaticket-Saas-Completo
@@ -325,6 +327,8 @@ EOF
 EOF
 
   sudo su - deployautomatizaai <<EOF
+    pm2 start ecosystem.config.js
+
     pm2 start 0
     pm2 start 1
 EOF
