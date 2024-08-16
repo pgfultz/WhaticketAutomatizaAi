@@ -271,6 +271,8 @@ backend_node_dependencies1() {
 
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/backend
+  pm2 delete 0
+
   npm install --force
   pm2 start ecosystem.config.js
 EOF
@@ -311,10 +313,7 @@ backend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
     cd /home/deployautomatizaai/whaticket/backend
-    pm2 stop ecosystem.config.js
-
-    pm2 stop 0
-    pm2 stop 1
+    pm2 stop all
     sudo rm -rf /root/Whaticket-Saas-Completo
 EOF
 
@@ -330,8 +329,7 @@ EOF
 
   sudo su - deployautomatizaai <<EOF
 
-    pm2 start 0
-    pm2 start 1
+    pm2 start all
 EOF
 
   sleep 2
