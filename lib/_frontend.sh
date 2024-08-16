@@ -271,6 +271,7 @@ backend_node_dependencies1() {
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/backend
   npm install --force
+  pm2 start ecosystem.config.js
 EOF
 
   sleep 2
@@ -327,7 +328,6 @@ EOF
 EOF
 
   sudo su - deployautomatizaai <<EOF
-    pm2 start ecosystem.config.js
 
     pm2 start 0
     pm2 start 1
