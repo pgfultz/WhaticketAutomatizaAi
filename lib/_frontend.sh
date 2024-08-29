@@ -252,11 +252,10 @@ frontend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/frontend
-  pm2 stop 0
-  pm2 stop 1
+  pm2 stop all
 
-  pm2 start 0
-  pm2 start 1
+  pm2 start all
+
 EOF
 
   sleep 2
@@ -273,7 +272,7 @@ backend_node_dependencies1() {
   cd /home/deployautomatizaai/whaticket/backend 
 
   npm install --force
-  pm2 start ecosystem.config.js
+ 
   pm2 save
 EOF
 
