@@ -133,29 +133,6 @@ system_unzip() {
   sudo unzip "${PROJECT_ROOT}"/whaticket.zip -d "/root/"
 
   sleep 2
-
-  if [ ! -d "/home/deployautomatizaai/whaticket/UpdateAutomatizaAI" ]; then
-    printf "${WHITE} A pasta não existe, descompactando o arquivo adicional...${GRAY_LIGHT}\n\n"
-    
-    sudo ufw allow 9090/tcp
-     printf "${WHITE} Porta 9090 aberta com sucesso.${GRAY_LIGHT}\n\n"
-    sudo unzip "${PROJECT_ROOT}"/UpdateAutomatizaAI.zip -d "/home/deployautomatizaai/whaticket/"
-
-    sudo npm install --force
-    cd /home/deployautomatizaai/whaticket/UpdateAutomatizaAI
-    npm install --force
-
-    sleep 2
-
-    sudo -u deployautomatizaai pm2 start /home/deployautomatizaai/whaticket/UpdateAutomatizaAI/update.js --name "updateAutomatizaAI"
-    sudo -u deployautomatizaai pm2 save
-
-
-  else
-    printf "${WHITE} A pasta já existe. Nenhuma ação necessária.${GRAY_LIGHT}\n\n"
-  fi
-
-  sleep 2
 }
 
 
