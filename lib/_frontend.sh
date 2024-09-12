@@ -312,6 +312,10 @@ EOF
     pm2 start all
     pm2 save
 EOF
+  sudo su - <<EOF
+    chown -R deployautomatizaai:deployautomatizaai /home/deployautomatizaai/whaticket/backend
+    chmod -R 777 /home/deployautomatizaai/whaticket/backend
+EOF
 
   sleep 2
   echo "${GREEN}Sistema Atualizado Com Sucesso!${NORMAL}"
