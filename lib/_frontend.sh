@@ -229,6 +229,13 @@ frontend_restart_pm2() {
 
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/frontend
+  pm2 delete whaticket-frontend
+  pm2 delete waticket-backend
+  pm2 start server.js --name whaticket-frontend -i max
+
+  pm2 stop all
+
+  pm2 start all
 
 EOF
 
@@ -301,12 +308,14 @@ EOF
 EOF
 
   sudo su - deployautomatizaai <<EOF
-  
-    pm2 stop all
+
     pm2 start all
     pm2 save
 EOF
- 
+  sudo su - <<EOF
+    chown -R deployautomatizaai:deployautomatizaai /home/deployautomatizaai/whaticket/backend
+    chmod -R 777 /home/deployautomatizaai/whaticket/backend
+EOF
 
   sleep 2
   echo "${GREEN}Sistema Atualizado Com Sucesso!${NORMAL}"
