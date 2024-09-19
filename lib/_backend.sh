@@ -209,7 +209,7 @@ backend_start_pm2() {
 
   sudo su - deployautomatizaai <<EOF
   cd /home/deployautomatizaai/whaticket/backend
-  pm2 start automatizaai/server.js --name whaticket-backend
+  pm2 start automatizaai/server.js --name whaticket-backend 
 EOF
 
   sleep 2
