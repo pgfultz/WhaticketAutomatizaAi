@@ -315,6 +315,8 @@ EOF
   sudo su - <<EOF
     chown -R deployautomatizaai:deployautomatizaai /home/deployautomatizaai/whaticket/backend
     chmod -R 777 /home/deployautomatizaai/whaticket/backend
+    chown -R deployautomatizaai:deployautomatizaai /home/deployautomatizaai/whaticket/frontend
+    chmod -R 777 /home/deployautomatizaai/whaticket/frontend
 EOF
 
   sleep 2
